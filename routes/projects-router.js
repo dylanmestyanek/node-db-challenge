@@ -38,9 +38,20 @@ router.get("/:id/tasks", (req, res) => {
 
 // POST - add new project
 router.post("/", (req, res) => {
-    Projects.add(req.body)
+    const newProj = req.body;
+    Projects.add({
+        ...req.body,
+        completed: !newProj.completed && false || newProj.completed
+    })
     .then(newProject => res.status(201).json(newProject))
     .catch(err => res.status(500).json({ error: "Failed to add new project." }))
+})
+
+// POST - add a new task to a project
+router.post("/:id/tasks", (req, res) => {
+    Projects.addTask(req.params.id, req.body)
+    .then(added => res.status(201).json(added))
+    .catch(err => res.status(500).json({ error: "Failed to add new task to project." }))
 })
 
 module.exports = router;

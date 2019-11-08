@@ -3,7 +3,8 @@ const db = require("../data/db-config");
 module.exports = {
     get,
     getTasks,
-    add
+    add,
+    addTask
 }
 
 function get(id) {
@@ -22,4 +23,13 @@ function getTasks(id) {
 function add(project) {
     return db('projects')
         .insert(project)
+}
+
+function addTask(id, task) {
+    return db('tasks')
+        .insert({
+            ...task,
+            project_id: id
+        })
+
 }
