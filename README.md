@@ -40,11 +40,20 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 - [ ] Explain the difference between `Relational Databases` and `SQL`.
 
+  **Answer:** The differene between RDB's and SQL, is that RDB's are a way of storing data, in table formats, similar to an excel spreadsheet. These tables can have intertwined information which links them together through properties called, foreign keys. SQL (Structured Query Language) is the language used to manipulate these tables, such as: retrieving, adding, updating, and removing pieces of data.
+
 - [ ] Why do tables need a `primary key`?
+
+  **Answer:** Tables need a primary key because this is how each row will be identified. Typically represented in an ID format, these ID's are specific to that exact row of data, which can then be used to retrieve that information, update, delete, or reference the row of data in another table (using that primary key as a foreign key).
+
 
 - [ ] What is the name given to a table column that references the primary key on another table.
 
+  **Answer:** A foreign key.
+
 - [ ] What do we need in order to have a _many to many_ relationship between two tables.
+
+  **Answer:** In order to have a `many to many` relationship between two tables, there should be a third table which connects them. This is typically achieved through using foreign keys. Table A and Table B could be connected through Table C. In this scenario, Table C will have access to Table A's primary key, and Table B's primary key, which will be held as foreign keys.
 
 ## Minimum Viable Product
 
